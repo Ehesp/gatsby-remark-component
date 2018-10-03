@@ -40,5 +40,8 @@
     "remark": "^9.0.0",
     "rollup-plugin-babel": "^3.0.3",
     "rollup-plugin-node-resolve": "^3.0.2"
+  },
+  "jest": {
+    "testURL": "http://localhost/"
   }
 }
