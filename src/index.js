@@ -11,14 +11,13 @@ module.exports = ({ markdownAST }, { components }) => {
   }
 
   function setParentForComponents(markdownAST, components) {
-    components.forEach(comp => {
+    for (let i = 0, len = components.length; i < len; i++) {
       visit(markdownAST, `html`, (node, index, parent) => {
-        if (node.value == `<${comp}>`) {
-          console.log(`Setting type of ${comp} parent to div.`)
+        if (node.value == `<${components[i]}>`) {
           parent.type = "div"
         }
       })
-    })
+    }
   }
 
   function setParentForNonHtmlElements(markdownAST) {
